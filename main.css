@@ -304,6 +304,6 @@
         height: 5vh;
     }
     
-    #categories-image-links {
+    #main-part-container {
         grid-column-start: span 4;
     }
