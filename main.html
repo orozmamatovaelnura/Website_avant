@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="accordion-style.css" />
+    <link rel="script" href="placeholder_animation.js" />
+    <link rel="script" href="catalog-accordion.js" />
+    <link href="https://getbootstrap.com/docs/5.3/layout/grid/" rel="stylesheet" crossorigin="anonymous">
+
+
+    <title>Avant</title>
+</head>
+
+<body>
+
+
+    <!--Navbar-->
+    <div class="navbar-container">
+        <div class="navbar">
+            <nav>
+                <ul>
+                    <li></li>
+                    <li><a href="">О компании</a></li>
+                    <li><a href="">Доставка</a></li>
+                    <li><a href="">Контакты</a></li>
+                    <li></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+
+
+    <div class="wrapper">
+
+        <div class="header">
+            <!--LOGO-->
+            <img class="logo" src="logoavant.png" alt="logo" />
+            <div class="search-bar">
+                <input type="text" placeholder="Гибкие шланги...">
+
+                <!-- 
+
+                <form class="form-for-search" onsubmit="event.preventDefault();" role="search">
+                    <label for="search">Search for stuff</label>
+                    <input id="search" type="search" placeholder="Search..." autofocus required />
+                    <button type="submit">Go</button>
+                </form>-->
+            </div>
+            <div class="contacts-and-bag">
+                <div class="header-contacts">
+
+                    <p><a href="">+996 (552) 459795</a> </p>
+                    <p>sadikovaanar@mail.ru</p>
+                    <p>janar0678_@mail.ru</p>
+                </div>
+                <div>
+                    <a class="bag-link" href="">
+                        <img class="bag-icon" src="bag.jpg" />
+                    </a>
+                </div>
+            </div>
+
+        </div>
+        <!--Main content-->
+        <div class="main-content-wrapper">
+
+            <div class="accordion-container">
+                <div class="accordion">
+                    <span class="target-fix" id="accordion"></span>
+
+                    <div>
+                        <span class="target-fix" id="accordion1"></span>
+                        <a href="#accordion1" id="open-accordion1" title="open">Каталог товаров</a>
+                        <a href="#accordion" id="close-accordion1" title="close">Каталог товаров</a>
+
+
+                        <!--Categories-->
+                        <div class="accordion-content">
+                            <div class="accordion-categories" style="position: relative;">
+                                <ul class="category-list">
+                                    <li class="category-tablink" onmouseover="openSubcategories(event, 'Унитазы')" onmouseout="closeSubcategories(event, 'Унитазы')">
+                                        <span class="category-icon">
+                                            <img  src="category-icon.png">
+                                                
+                                        </img>
+                                        </span> Унитазы
+                                    </li>
+                                    <li class="category-tablink" onmouseover="openSubcategories(event, 'Tokyo')" onmouseout="closeSubcategories(event, 'Tokyo')">
+                                        <span class="category-icon">
+                                            <img  src="category-icon.png">
+                                                
+                                        </img>
+                                        </span> Tokyo
+                                    </li>
+                                    <li class="category-tablink" onmouseover="openSubcategories(event, 'Paris')" onmouseout="closeSubcategories(event, 'Paris')">
+                                        <span class="category-icon">
+                                            <img  src="category-icon.png">
+                                                
+                                        </img>
+                                        </span> Paris
+                                    </li>
+                                    <li class="category-tablink" onmouseover="openSubcategories(event, 'Bishkek')" onmouseout="closeSubcategories(event, 'Bishkek')">
+                                        <span class="category-icon">
+                                            <img  src="category-icon.png">
+                                                
+                                        </img>
+                                        </span> Bishkek
+                                    </li>
+                            </div>
+
+                            <div class="subcategories-container">
+
+
+                                <div id="Унитазы" class="category" style="display:none">
+                                    <ul class="subcategories" onmouseover="keepOpenSubcategories(event, 'Bishkek')" onmouseout="closeSubcategories(event, 'Bishkek')">
+                                        <li>
+                                            Унитазы напольные
+                                        </li>
+                                        <li>
+                                            Унитазы подвесные
+                                        </li>
+                                        <li>
+                                            Унитазы приставные
+                                        </li>
+                                        <li>
+                                            Унитазы детские
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div id="Paris" class="category" style="display:none">
+                                    <h2>Paris</h2>
+                                    <p>Paris is the capital of France.</p>
+                                    <p>The Paris area is one of the largest population centers in Europe, with more than 12 million inhabitants.</p>
+                                </div>
+
+                                <div id="Tokyo" class="category" style="display:none">
+                                    <h2>Tokyo</h2>
+                                    <p>Tokyo is the capital of Japan.</p>
+                                    <p>It is the center of the Greater Tokyo Area, and the most populous metropolitan area in the world.</p>
+                                </div>
+                                <div id="Bishkek" class="category" style="display:none">
+                                    <h2>Bishkek</h2>
+                                    <p>Tokyo is the capital of Japan.</p>
+                                    <p>It is the center of the Greater Tokyo Area, and the most populous metropolitan area in the world.</p>
+                                </div>
+
+                            </div>
+                            <script>
+                                function openSubcategories(evt, categoryName) {
+                                    var i, x;
+                                    x = document.getElementsByClassName("category");
+                                    for (i = 0; i < x.length; i++) {
+                                        x[i].style.display = "none";
+                                    }
+
+                                    document.getElementById(categoryName).style.display = "block";
+
+                                    /*    document.body.style.filter = "blur(1px)";*/
+                                }
+
+                                function closeSubcategories(evt, categoryName) {
+                                    var i, x;
+                                    x = document.getElementsByClassName("category");
+                                    for (i = 0; i < x.length; i++) {
+                                        x[i].style.display = "none";
+                                    }
+                                    document.body.style.filter = "blur()";
+                                }
+
+                                function keepOpenSubcategories(evt, subcategoryName) {
+                                    var i, x;
+                                    x = document.getElementsByClassName("category");
+                                    for (i = 0; i < x.length; i++) {
+                                        x[i].style.display = "none";
+                                    }
+
+                                    /*document.getElementByClass(subcategoryName).style.display = "block";*/
+                                    self.style.display = "block";
+                                    /*    document.body.style.filter = "blur(1px)";*/
+                                }
+                            </script>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="categories-image-links" class="col-sm-8 col-md-9 col-lg-9 col-xxl-16">
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <!--Footer-->
+    <div class="footer-container">
+        <div class="center-footer">
+            <div class="left-footer">
+                <article class="browser">
+                    <h2>Информация</h2>
+                    <ul class="footer-ul">
+                        <li>
+                            <a href="">
+                                <p>О нас</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <p>Информация о доставке</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <p>Правила оплаты и безопасность платежей</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <p>Условия соглашения</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <p>Схема проезда</p>
+                            </a>
+                        </li>
+                    </ul>
+                </article>
+            </div>
+            <div class="right-footer">
+                <article class="browser">
+                    <h2>Контакты</h2>
+                    <p>г.Бишкек, ул.Белинка 10</p>
+                    <p>пн - пт 09: 00 до 18:00 сб-вс 10:00 до 17:00</p>
+                    <p>+996 552 459795</p>
+                    <p>+996 552 810007</p>
+                    <p>magazin@avant.kg</p>
+                </article>
+            </div>
+        </div>
+        <div class="bottom-footer"></div>
+    </div>
+
+</body>
+
+</html>

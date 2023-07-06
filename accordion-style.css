@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
+.accordion-container {
+    grid-column-start: span 2;
+    align-items: center;
+    justify-content: center;
+}
+
+.accordion {
+    position: relative;
+    padding: 0%;
+}
+
+[id*="open-accordion"],
+[id*="close-accordion"] {
+    background-color: #7ebaff;
+    border-bottom: 1px solid #fff;
+    border-radius: 4px 4px 0px 0px;
+    line-height: 40px;
+    height: 40px;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+}
+
+[id*="close-accordion"] {
+    display: none;
+}
+
+.accordion a {
+    color: #fff;
+    font-size: calc(5px + 1vw);
+    ;
+    font-weight: normal;
+    text-decoration: none;
+    text-shadow: none;
+    padding-left: 5%;
+    font-weight: bold;
+}
+
+[id*="open-accordion"]:after,
+[id*="close-accordion"]:after {
+    content: "";
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid rgba(255, 255, 255, 0.6);
+    border-bottom: 30px;
+    position: absolute;
+    right: 5px;
+    top: 15px;
+    z-index: 999;
+    transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+}
+
+.target-fix {
+    display: block;
+    top: 0;
+    left: 0;
+    position: fixed;
+}
+
+.accordion-content {
+    background: #fff;
+    height: 0;
+    padding: 0%;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    transition: all 0.1s ease;
+    -webkit-transition: all 0.1s ease;
+    -moz-transition: all 0.1s ease;
+}
+
+.accordion span:target~.accordion-content {
+    grid-column: 1;
+    display: grid;
+    grid-template-columns: 1fr 0.7fr;
+    width: 170%;
+    height: auto;
+}
+
+.accordion span:target~[id*="close-accordion"] {
+    display: block;
+}
+
+.accordion span:target~[id*="open-accordion"] {
+    display: none;
+}
+
+.accordion span:target~[id*="close-accordion"]:after {
+    border-top: 5px solid rgb(255, 255, 255);
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+}
+
+.category-list li {
+    position: relative;
+    border: solid 1.5px rgba(0, 0, 0, .1);
+    border-top: none;
+    transition: all linear .15s;
+    padding: 15px 10px;
+    align-self: center;
+    font-size: calc(1px + 1vw);
+    font-family: 'Nunito';
+    font-weight: bold;
+}
+
+.category-list li label {
+    width: 400px;
+    height: 100%;
+}
+
+.accordion-categories {
+    grid-column-start: span 1;
+}
+
+.subcategories-container {
+    grid-column: 2;
+    z-index: 1;
+}
+
+.accordion-content ul {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    list-style: none;
+}
+
+.subcategories {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    list-style: none;
+}
+
+.subcategories li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+    padding: 0%;
+}
+
+.accordion-content ul li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+    padding: 0%;
+}
+
+.category-list ul {
+    list-style-image: url('galochka.png');
+}
+
+.category-list li {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.category-icon {
+    width: 45%;
+    grid-column: 2;
+    padding-left: 5%;
+}
