@@ -24,14 +24,14 @@
     .navbar-not-bs a {
         float: center;
         display: block;
-        color: #000000;
+        color: #ffffff;
         text-align: center;
         padding: 15px 18px;
         text-decoration: none;
         font-size: 12px;
     }
     
-    .navbar a:hover {
+    .navbar-not-bs a:hover {
         color: #19abff;
     }
     
@@ -64,17 +64,6 @@
         list-style: none;
         display: inline-block;
         align-self: center;
-    }
-    
-    .navbar-not-bs ul li a {
-        text-decoration: none;
-        color: #000;
-        font-family: 'Nunito';
-        font-weight: bold;
-    }
-    
-    .navbar ul li a:hover {
-        color: aquamarine;
     }
     
     .wrapper {
@@ -311,21 +300,38 @@
         z-index: 1;
     }
     
-    .category-thumb {
+    .category-thumb a {
         position: relative;
-        margin: 0 0 20px;
-        padding: 10px;
+        margin: 0 0 15px;
+        padding: 0.3rem;
         background: #fff;
         border: solid 1px rgba(0, 0, 0, .07);
         border-radius: 4px;
         display: grid;
-        grid-template-rows: 1fr 1fr 1fr 1fr;
+        text-decoration: none;
     }
     
     .category__image {
+        grid-column: 1;
+        grid-row: 1;
         position: relative;
         margin: 0 0 10px;
         border-bottom: solid 1px rgba(0, 0, 0, .07);
         box-shadow: 0 5px 5px -2px rgba(0, 0, 0, .06);
         width: 100%;
+        z-index: 0;
+    }
+    
+    .category__name {
+        grid-column: 1;
+        grid-row: 1;
+        z-index: 1;
+        width: 100%;
+        color: #fff;
+        font-weight: bold;
+        font-family: "Nunito";
+        align-self: flex-end;
+        background-color: #3995fe94;
+        text-align: left;
+        padding-left: 0.5rem;
     }
