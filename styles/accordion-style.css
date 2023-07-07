@@ -48,7 +48,7 @@
     border-bottom: 20px;
     position: absolute;
     right: 10px;
-    top: 3vh;
+    top: 15px;
     z-index: 999;
     transform: rotate(-90deg);
     -webkit-transform: rotate(-90deg);
@@ -122,7 +122,7 @@
 
 .subcategories-container {
     grid-column: 2;
-    z-index: 1;
+    z-index: 2;
     background-color: white;
     border: none;
     border-radius: 0px 3px 3px 0px;
@@ -176,7 +176,7 @@
     border: 1px;
     display: inline-block;
     cursor: pointer;
-    color: black;
+    color: #2e8fff;
     font-family: "Nunito";
     font-size: calc(1px + 1vw);
     text-decoration: none;
@@ -188,7 +188,7 @@
 }
 
 .subcategory-link button:hover {
-    color: #39c7ff;
+    color: #9ec9fa;
 }
 
 .subcategory-link {

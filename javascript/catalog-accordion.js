@@ -28,3 +28,24 @@ for (i = 0; i < acc.length; i++) {
     });
 }
 */
+
+function openSubcategories(evt, categoryName) {
+    var i, x;
+    x = document.getElementsByClassName("category");
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+    }
+
+    document.getElementById(categoryName).style.display = "block";
+    document.getElementsByClassName("subcategories-container").style.display = "block";
+}
+
+function closeSubcategories(evt, categoryName) {
+    var i, x;
+    x = document.getElementsByClassName("category");
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+    }
+
+
+}
