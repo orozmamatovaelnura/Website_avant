@@ -130,8 +130,8 @@
         </div>
         <!--Main content-->
         <div class="main-content-wrapper row">
-            <div class="accordion-search row">
-                <aside class="accordion-container col-12 col-sm-6 col-md-4 col-lg-4 col-xxl-4" style="padding-right: calc(var(--bs-gutter-x) * .2);
+            <div class="accordion-search row col-12 col-sm-6 col-md-4 col-lg-4 col-xxl-4">
+                <aside class="accordion-container" style="padding-right: calc(var(--bs-gutter-x) * .2);
                 padding-left: calc(var(--bs-gutter-x) * .2);">
                     <div class="accordion ">
                         <span class="target-fix" id="accordion"></span>
@@ -157,7 +157,7 @@
                                         </li>
                                 </div>
 
-                                <div class="subcategories-container">
+                                <div class="subcategories-container" style="z-index: 1;">
                                     <div id="Унитазы" class="category" style="display:none">
                                         <ul class="subcategories" onmouseover="openSubcategories(event, 'Унитазы')" onmouseout="closeSubcategories(event, 'Унитазы')">
                                             <li>
@@ -176,71 +176,69 @@
                             </div>
                         </div>
                     </div>
+
                 </aside>
 
 
-
-                <div class="search-bar-header d-none d-sm-block d-md-none col-6 " style="padding-right: calc(var(--bs-gutter-x) * .2);
+            </div>
+            <div class="search-bar-header d-none d-sm-block d-md-none col-6 " style="padding-right: calc(var(--bs-gutter-x) * .2);
                 padding-left: calc(var(--bs-gutter-x) * .2);">
-                    <input type="text" placeholder="3.">
-                </div>
+                <input type="text" placeholder="3.">
+            </div>
+            <div class="main-part-container col-12 col-sm-12 col-md-8 col-lg-8  col-xxl-8" style=" z-index: 0;">
 
-
-                <nav class="search-bar col-8" aria-label="breadcrumb">
+                <nav class="search-bar col-8 col-sm-12 " aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Library</li>
                     </ol>
                 </nav>
+                <div class="categories-image-links row row-cols-2 row-cols-sm-3 row-cols-md-3 row-cols-lg-3 row-cols-xl-4 row-cols-xxl-4">
 
-                <div class="main-part-container col-12 col-sm-12 col-md-8 col-lg-8  col-xxl-8 offset-4">
-                    <div class="categories-image-links row row-cols-2 row-cols-sm-3 row-cols-md-3 row-cols-lg-3 row-cols-xl-4 row-cols-xxl-4">
+                    <div class="category-thumb">
+                        <a href="https://www.google.com" class="category-link">
+                            <img class="category__image" src="images/slide1.jpg" />
 
-                        <div class="category-thumb">
-                            <a href="https://www.google.com" class="category-link">
-                                <img class="category__image" src="images/slide1.jpg" />
-
-                                <p class="category__name">Унитазы</p>
-                            </a>
-                        </div>
-                        <div class="category-thumb">
-                            <a href="https://www.google.com" class="category-link">
-                                <img class="category__image" src="images/slide1.jpg" />
-
-                                <p class="category__name">Унитазы</p>
-                            </a>
-                        </div>
-                        <div class="category-thumb">
-                            <a href="https://www.google.com" class="category-link">
-                                <img class="category__image" src="images/slide1.jpg" />
-
-                                <p class="category__name">Унитазы</p>
-                            </a>
-                        </div>
-                        <div class="category-thumb">
-                            <a href="https://www.google.com" class="category-link">
-                                <img class="category__image" src="images/slide1.jpg" />
-
-                                <p class="category__name">Унитазы</p>
-                            </a>
-                        </div>
-
+                            <p class="category__name">Унитазы</p>
+                        </a>
                     </div>
-                    <div class=" slides-container ">
-                        <div class="mySlides ">
-                            <img src="images/slide1.jpg " style="width:100% ">
-                        </div>
+                    <div class="category-thumb">
+                        <a href="https://www.google.com" class="category-link">
+                            <img class="category__image" src="images/slide1.jpg" />
 
-                        <div class="mySlides ">
-                            <img src="images/slide2.jpg " style="width:100% ">
-                        </div>
-
-                        <div class="mySlides ">
-                            <img src="images/slide3.jpg " style="width:100% ">
-                        </div>
-                        <a class="prev " onclick="previousSlide() ">❮</a>
-                        <a class="next " onclick="nextSlide() ">❯</a>
+                            <p class="category__name">Унитазы</p>
+                        </a>
                     </div>
+                    <div class="category-thumb">
+                        <a href="https://www.google.com" class="category-link">
+                            <img class="category__image" src="images/slide1.jpg" />
+
+                            <p class="category__name">Унитазы</p>
+                        </a>
+                    </div>
+                    <div class="category-thumb">
+                        <a href="https://www.google.com" class="category-link">
+                            <img class="category__image" src="images/slide1.jpg" />
+
+                            <p class="category__name">Унитазы</p>
+                        </a>
+                    </div>
+
+                </div>
+                <div class="slides-container">
+                    <div class="mySlides">
+                        <img src="images/slide1.jpg" style="width:100%">
+                    </div>
+
+                    <div class="mySlides">
+                        <img src="images/slide2.jpg" style="width:100%">
+                    </div>
+
+                    <div class="mySlides">
+                        <img src="images/slide3.jpg" style="width:100%">
+                    </div>
+                    <a class="prev" onclick="previousSlide() ">❮</a>
+                    <a class="next" onclick="nextSlide() ">❯</a>
                 </div>
             </div>
         </div>
