@@ -220,7 +220,7 @@
         color: white;
     }
     
-    @media only screen and (max-width: 750px) {
+    @media only screen and (max-width: 768px) {
         .footer-container {
             display: grid;
             grid-template-columns: 1fr;
@@ -243,6 +243,9 @@
             background-color: #64a5f0;
             padding: 0%;
             bottom: 0px;
+        }
+        .side-filter-container {
+            display: none;
         }
     }
     

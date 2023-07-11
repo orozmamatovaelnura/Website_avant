@@ -28,17 +28,6 @@
     display: none;
 }
 
-.accordion a {
-    color: #fff;
-    font-size: 1rem;
-    font-weight: normal;
-    text-decoration: none;
-    text-shadow: none;
-    padding-left: 5%;
-    font-weight: bold;
-    align-self: center;
-}
-
 [id*="open-accordion"]:after,
 [id*="close-accordion"]:after {
     content: "";
@@ -52,25 +41,6 @@
     z-index: 999;
     transform: rotate(-90deg);
     -webkit-transform: rotate(-90deg);
-}
-
-.target-fix {
-    display: block;
-    top: 0;
-    left: 0;
-    position: fixed;
-}
-
-.accordion-content {
-    background: #fff;
-    height: 0;
-    padding: 0%;
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    transition: all 0.1s ease;
-    -webkit-transition: all 0.1s ease;
-    -moz-transition: all 0.1s ease;
 }
 
 .accordion span:target~.accordion-content {
@@ -93,6 +63,36 @@
     border-top: 5px solid rgb(255, 255, 255);
     transform: rotate(0deg);
     -webkit-transform: rotate(0deg);
+}
+
+.target-fix {
+    display: block;
+    top: 0;
+    left: 0;
+    position: fixed;
+}
+
+.accordion-content {
+    background: #fff;
+    height: 0;
+    padding: 0%;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    transition: all 0.1s ease;
+    -webkit-transition: all 0.1s ease;
+    -moz-transition: all 0.1s ease;
+}
+
+.accordion a {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: normal;
+    text-decoration: none;
+    text-shadow: none;
+    padding-left: 5%;
+    font-weight: bold;
+    align-self: center;
 }
 
 .category-list li {
@@ -195,3 +195,5 @@
     height: 100%;
     width: 100%;
 }
+
+@media only screen and (min-width: 750px) {}

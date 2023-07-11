@@ -14,6 +14,8 @@
     <link rel="script" href="javascript/catalog-accordion.js" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
     <script>
         let slideIndex = 0;
 
@@ -41,33 +43,66 @@
             } else {
                 slideIndex = n;
             }
-            console.log(slideIndex);
-            console.log(n);
+
             for (i = 0; i < slides.length; i++) {
                 slides[i].style.display = "none";
             }
             slides[slideIndex].style.display = "block";
         }
 
-        function openSubcategories(evt, categoryName) {
-            var i, x;
-            x = document.getElementsByClassName("category");
-            for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none";
-            }
 
-            document.getElementById(categoryName).style.display = "block";
-            document.getElementsByClassName("subcategories-container").style.display = "block";
+
+        function openSubcategories(evt, categoryName) {
+            var w = window.innerWidth;
+            if ($(window).width() >= 576) {
+                var i, x;
+                console.log(w);
+                x = document.getElementsByClassName("category");
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";
+                }
+
+                document.getElementById(categoryName).style.display = "block";
+            }
         }
 
         function closeSubcategories(evt, categoryName) {
-            var i, x;
-            x = document.getElementsByClassName("category");
-            for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none";
+            var w = window.innerWidth;
+            console.log(33);
+            if ($(window).width() >= 576) {
+                var i, x;
+                x = document.getElementsByClassName("category");
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";
+                }
             }
+        }
 
 
+        var subcategoryState = "closed";
+
+        function openCloseSubcategoriesDown(evt, categoryName) {
+            var w = window.innerWidth;
+            if ($(window).width() < 576) {
+                var i, x;
+                x = document.getElementsByClassName("category");
+                console.log(subcategoryState);
+
+                if (subcategoryState == "closed") {
+                    subcategoryState = "open";
+                    for (i = 0; i < x.length; i++) {
+                        x[i].style.display = "none";
+                    }
+
+                    document.getElementById(categoryName).style.display = "block";
+
+                } else {
+                    for (i = 0; i < x.length; i++) {
+                        x[i].style.display = "none";
+                    }
+                    subcategoryState = "closed";
+                }
+            }
         }
     </script>
 
@@ -102,7 +137,7 @@
 
 
             </div>
-            <div class="contacts-and-bag col-8 col-sm-8 col-md-3 col-lg-3 col-xxl-3">
+            <div class="contacts-and-bag col-8 col-sm-8 col-md-3 col-lg-4 col-xxl-4">
                 <div class="header-contacts">
 
                     <p><a href="">+996 (552) 459795</a> </p>
@@ -116,8 +151,8 @@
                 </div>
             </div>
 
-            <div class="search-bar-header d-block d-sm-none col-12 " style="padding-right: calc(var(--bs-gutter-x) * .2);
-            padding-left: calc(var(--bs-gutter-x) * .2); ">
+            <div class="search-bar-header d-block d-sm-none col-12 " style="padding-right: calc(var(--bs-gutter-x) * .5);
+            padding-left: calc(var(--bs-gutter-x) * .5); ">
                 <input type="text" placeholder="2.">
 
             </div>
@@ -125,48 +160,160 @@
 
         </div>
 
-        <div class="side-filter-container">
 
-        </div>
+
         <!--Main content-->
         <div class="main-content-wrapper row">
-            <div class="accordion-search row col-12 col-sm-6 col-md-4 col-lg-4 col-xxl-4">
-                <aside class="accordion-container" style="padding-right: calc(var(--bs-gutter-x) * .2);
-                padding-left: calc(var(--bs-gutter-x) * .2);">
+            <div class="accordion-search row col-12 col-sm-6 col-md-4 col-lg-4 col-xxl-3">
+                <aside class="accordion-container" style=" padding-right: calc(var(--bs-gutter-x) * .5); padding-left: calc(var(--bs-gutter-x) * .5); ">
                     <div class="accordion ">
-                        <span class="target-fix" id="accordion"></span>
+                        <span class="target-fix " id="accordion "></span>
 
                         <div>
-                            <span class="target-fix" id="accordion1"></span>
-                            <a href="#accordion1" style="width: auto;" id="open-accordion1" title="open">
+                            <span class="target-fix " id="accordion1 "></span>
+                            <a href="#accordion1 " style="width: auto; " id="open-accordion1 " title="open ">
                                 <p>Каталог товаров</p>
                             </a>
-                            <a href="#accordion" id="close-accordion1" title="close">
+                            <a href="#accordion " id="close-accordion1 " title="close ">
                                 <p>Каталог товаров</p>
                             </a>
 
                             <!--Categories-->
-                            <div class="accordion-content">
-                                <div class="accordion-categories" style="position: relative;">
-                                    <ul class="category-list">
-                                        <li class="category-tablink" onmouseover="openSubcategories(event, 'Унитазы')" onmouseout="closeSubcategories(event, 'Унитазы')">
+                            <div class="accordion-content ">
+                                <div class="accordion-categories " style="position: relative; ">
+                                    <ul class="category-list ">
+                                        <li class="category-tablink " onmouseover="openSubcategories(event, 'Унитазы') " onmouseout="closeSubcategories(event, 'Унитазы') " onclick="openCloseSubcategoriesDown(event, 'Унитазы-вниз') ">
+                                            <span class="category-icon ">
+                                                <img  src="images/category-icon.png "/>
+                                            </span> Унитазы
+                                            <div class="subaccordion-content ">
+                                                <div id="Унитазы-вниз " class="category " style="display:none ">
+                                                    <ul class="subcategories ">
+                                                        <li>
+                                                            <a class="subcategory-link " href="https://www.google.com ">
+                                                                <button>Go to Google</button>
+                                                            </a>
+                                                        </li>
 
-                                            <span class="category-icon">
-                                            <img  src="images/category-icon.png"/>
-                                        </span> Унитазы
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <!--HEEEEEEffffffffffffffffjjfffffEEEEE-->
+                                        <li class="category-tablink " onmouseover="openSubcategories(event, 'Раковины') " onmouseout="closeSubcategories(event, 'Раковины') " onclick="openCloseSubcategoriesDown(event, 'Раковины-вниз') ">
+
+                                            <span class="category-icon ">
+                                                <img  src="images/category-icon.png "/>
+                                            </span> Раковины
+                                            <div class="subaccordion-content ">
+                                                <div id="Раковины-вниз " class="category " style="display:none ">
+                                                    <ul class="subcategories ">
+                                                        <li>
+                                                            <a class="subcategory-link " href="https://www.google.com ">
+                                                                <button>Go to Google</button>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="subcategory-link " href="https://www.google.com ">
+                                                                <button>Go to Google</button>
+                                                            </a>
+                                                        </li>
+
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+
+                                            <!--HEEEEEEEfffffffffffffffffffffEEEE-->
+                                        </li>
+                                        <li class="category-tablink " onmouseover="openSubcategories(event, 'Аксессуары') " onmouseout="closeSubcategories(event, 'Аксессуары') " onclick="openCloseSubcategoriesDown(event, 'Аксессуары-вниз') ">
+                                            <span class="category-icon ">
+                                                <img  src="images/category-icon.png "/>
+                                            </span> Аксессуары
+                                            <div class="subaccordion-content ">
+                                                <div id="Аксессуары-вниз " class="category " style="display:none ">
+                                                    <ul class="subcategories ">
+                                                        <li>
+                                                            <a class="subcategory-link " href="https://www.google.com ">
+                                                                <button>Go to Google</button>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="subcategory-link " href="https://www.google.com ">
+                                                                <button>Go to Google</button>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="subcategory-link " href="https://www.google.com ">
+                                                                <button>Go to Google</button>
+                                                            </a>
+                                                        </li>
+
+                                                    </ul>
+                                                </div>
+                                            </div>
                                         </li>
                                 </div>
 
-                                <div class="subcategories-container" style="z-index: 1;">
-                                    <div id="Унитазы" class="category" style="display:none">
-                                        <ul class="subcategories" onmouseover="openSubcategories(event, 'Унитазы')" onmouseout="closeSubcategories(event, 'Унитазы')">
+                                <div class="subcategories-container " style="z-index: 1; ">
+                                    <div id="Унитазы " class="category " style="display:none ">
+                                        <ul class="subcategories " onmouseover="openSubcategories(event, 'Унитазы') " onmouseout="closeSubcategories(event, 'Унитазы') ">
                                             <li>
-                                                <a class="subcategory-link" href="https://www.google.com">
+                                                <a class="subcategory-link " href="https://www.google.com ">
                                                     <button>Go to Google</button>
                                                 </a>
                                             </li>
                                             <li>
-                                                <a class="subcategory-link" href="https://www.google.com">
+                                                <a class="subcategory-link " href="https://www.google.com ">
+                                                    <button>Go to Google</button>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div id="Раковины " class="category " style="display:none ">
+                                        <ul class="subcategories " onmouseover="openSubcategories(event, 'Раковины') " onmouseout="closeSubcategories(event, 'Раковины') ">
+                                            <li>
+                                                <a class="subcategory-link " href="https://www.google.com ">
+                                                    <button>Go to Google</button>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="subcategory-link " href="https://www.google.com ">
+                                                    <button>Go to Google</button>
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a class="subcategory-link " href="https://www.google.com ">
+                                                    <button>Go to Google</button>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="subcategory-link " href="https://www.google.com ">
+                                                    <button>Go to Google</button>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="subcategory-link " href="https://www.google.com ">
+                                                    <button>Go to Google</button>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="subcategory-link " href="https://www.google.com ">
+                                                    <button>Go to Google</button>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div id="Аксессуары " class="category " style="display:none ">
+                                        <ul class="subcategories " onmouseover="openSubcategories(event, 'Аксессуары') " onmouseout="closeSubcategories(event, 'Аксессуары') ">
+                                            <li>
+                                                <a class="subcategory-link " href="https://www.google.com ">
+                                                    <button>Go to Google</button>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="subcategory-link " href="https://www.google.com ">
                                                     <button>Go to Google</button>
                                                 </a>
                                             </li>
@@ -175,76 +322,102 @@
                                 </div>
                             </div>
                         </div>
+
                     </div>
 
                 </aside>
 
+                <div class="side-filter-container " style="background-color: aqua; height: 40px; width: 40px; "></div>
 
             </div>
-            <div class="search-bar-header d-none d-sm-block d-md-none col-6 " style="padding-right: calc(var(--bs-gutter-x) * .2);
-                padding-left: calc(var(--bs-gutter-x) * .2);">
-                <input type="text" placeholder="3.">
-            </div>
-            <div class="main-part-container col-12 col-sm-12 col-md-8 col-lg-8  col-xxl-8" style=" z-index: 0;">
+            <div class="search-bar-header d-none d-sm-block d-md-none col-6 " style="padding-right: calc(var(--bs-gutter-x) * .5); padding-left: calc(var(--bs-gutter-x) * .5); ">
+                <input type="text " placeholder="3. ">
 
-                <nav class="search-bar col-8 col-sm-12 " aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Library</li>
+            </div>
+
+
+
+
+            <div class="main-part-container col-12 col-sm-12 col-md-8 col-lg-8 col-xxl-9 " style=" z-index: 0; ">
+
+                <nav class="search-bar col-8 col-sm-12 " aria-label="breadcrumb ">
+                    <ol class="breadcrumb ">
+                        <li class="breadcrumb-item "><a href="# ">Home</a></li>
+                        <li class="breadcrumb-item active " aria-current="page ">Library</li>
                     </ol>
                 </nav>
-                <div class="categories-image-links row row-cols-2 row-cols-sm-3 row-cols-md-3 row-cols-lg-3 row-cols-xl-4 row-cols-xxl-4">
+                <div class="categories-image-links row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-4 row-cols-xl-4 row-cols-xxl-4 ">
 
-                    <div class="category-thumb">
-                        <a href="https://www.google.com" class="category-link">
-                            <img class="category__image" src="images/slide1.jpg" />
+                    <div class="category-thumb ">
+                        <a href="https://www.google.com " class="category-link ">
+                            <img class="category__image " src="images/slide1.jpg " />
 
-                            <p class="category__name">Унитазы</p>
+                            <p class="category__name ">Унитазы</p>
                         </a>
                     </div>
-                    <div class="category-thumb">
-                        <a href="https://www.google.com" class="category-link">
-                            <img class="category__image" src="images/slide1.jpg" />
+                    <div class="category-thumb ">
+                        <a href="https://www.google.com " class="category-link ">
+                            <img class="category__image " src="images/slide1.jpg " />
 
-                            <p class="category__name">Унитазы</p>
+                            <p class="category__name ">Унитазы</p>
                         </a>
                     </div>
-                    <div class="category-thumb">
-                        <a href="https://www.google.com" class="category-link">
-                            <img class="category__image" src="images/slide1.jpg" />
+                    <div class="category-thumb ">
+                        <a href="https://www.google.com " class="category-link ">
+                            <img class="category__image " src="images/slide1.jpg " />
 
-                            <p class="category__name">Унитазы</p>
+                            <p class="category__name ">Унитазы</p>
                         </a>
                     </div>
-                    <div class="category-thumb">
-                        <a href="https://www.google.com" class="category-link">
-                            <img class="category__image" src="images/slide1.jpg" />
+                    <div class="category-thumb ">
+                        <a href="https://www.google.com " class="category-link ">
+                            <img class="category__image " src="images/slide1.jpg " />
 
-                            <p class="category__name">Унитазы</p>
+                            <p class="category__name ">Унитазы</p>
+                        </a>
+                    </div>
+                    <div class="category-thumb ">
+                        <a href="https://www.google.com " class="category-link ">
+                            <img class="category__image " src="images/slide1.jpg " />
+
+                            <p class="category__name ">Унитазы</p>
+                        </a>
+                    </div>
+                    <div class="category-thumb ">
+                        <a href="https://www.google.com " class="category-link ">
+                            <img class="category__image " src="images/slide1.jpg " />
+
+                            <p class="category__name ">Унитазы</p>
+                        </a>
+                    </div>
+                    <div class="category-thumb ">
+                        <a href="https://www.google.com " class="category-link ">
+                            <img class="category__image " src="images/slide1.jpg " />
+
+                            <p class="category__name ">Унитазы</p>
                         </a>
                     </div>
 
                 </div>
-                <div class="slides-container">
-                    <div class="mySlides">
-                        <img src="images/slide1.jpg" style="width:100%">
+                <div class="slides-container ">
+                    <div class="mySlides ">
+                        <img src="images/slide1.jpg " style="width:100% ">
                     </div>
 
-                    <div class="mySlides">
-                        <img src="images/slide2.jpg" style="width:100%">
+                    <div class="mySlides ">
+                        <img src="images/slide2.jpg " style="width:100% ">
                     </div>
 
-                    <div class="mySlides">
-                        <img src="images/slide3.jpg" style="width:100%">
+                    <div class="mySlides ">
+                        <img src="images/slide3.jpg " style="width:100% ">
                     </div>
-                    <a class="prev" onclick="previousSlide() ">❮</a>
-                    <a class="next" onclick="nextSlide() ">❯</a>
+                    <a class="prev " onclick="previousSlide() ">❮</a>
+                    <a class="next " onclick="nextSlide() ">❯</a>
                 </div>
             </div>
         </div>
 
     </div>
-
     <!--Footer-->
     <div class="footer-container ">
         <div class="center-footer ">
