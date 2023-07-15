@@ -22,8 +22,9 @@
         window.onload = function() {
             showSlides(0);
             setInterval(nextSlide, 4000);
-            if ($(window).width() >= 576) {
-                window.location.href += "#accordion1";
+            if ($(window).width() >= 576 && !window.location.href.includes("#myaccordion1")) {
+                window.location.href += "#myaccordion1";
+                console.log("starter functions")
             }
         };
 
@@ -67,7 +68,7 @@
 
                 document.getElementById("subcategories-container").style.border = "solid 1px rgba(0, 0, 0, .1)";
                 document.getElementById("subcategories-container").style.borderLeft = "none";
-
+                console.log(document.getElementById(categoryName).style.display)
             }
         }
 
@@ -89,10 +90,6 @@
             if ($(window).width() < 576) {
                 var i, x;
                 x = document.getElementsByClassName("category");
-                /*
-                                for (i = 0; i < x.length; i++) {
-                                    x[i].style.display = "none";
-                                }*/
 
 
                 if (document.getElementById(categoryName).title == "closed") {
@@ -176,9 +173,9 @@
                         <div>
                             <span class="target-fix" id="myaccordion1"></span>
 
-                            <a href="#accordion1" id="open-accordion1" title="open">Open Accordion</a>
+                            <a href="#myaccordion1" id="open-accordion1" title="open">Open Accordion</a>
 
-                            <a href="#accordion" id="close-accordion1" title="close">Close Accordion</a>
+                            <a href="#myaccordion" id="close-accordion1" title="close">Close Accordion</a>
 
                             <div class="myaccordion-content">
 
@@ -352,7 +349,7 @@
                                         </ul>
                                     </div>
                                     <div id="Шланги" class="category ">
-                                        <ul class="subcategories " onmouseover="openSubcategories(event, 'Аксессуары') " onmouseout="closeSubcategories(event, 'Аксессуары') ">
+                                        <ul class="subcategories " onmouseover="openSubcategories(event, 'Шланги') " onmouseout="closeSubcategories(event, 'Шланги') ">
                                             <li>
                                                 <a class="subcategory-link " href="https://www.google.com ">
                                                     <button>Go to Google</button>

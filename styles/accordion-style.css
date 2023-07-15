@@ -148,7 +148,7 @@
     padding: 0%;
     line-height: 2.5rem;
     height: 2.5rem;
-    display: block;
+    display: initial;
 }
 
 .category-list ul {
