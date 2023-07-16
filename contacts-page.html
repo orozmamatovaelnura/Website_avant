@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/contacts-style.css" />
     <link rel="stylesheet" href="styles/bootstrap-addition.css" />
     <link rel="stylesheet" href="styles/accordion-style.css" />
     <link rel="stylesheet" href="styles/image-slides.css" />
@@ -122,7 +123,18 @@
         }
     </script>
 
-    <title>Avant</title>
+    <script>
+        window.onload = function() {
+            var i;
+            ordering_list = document.getElementsByClassName("info-part");
+            for (i = 1; i < ordering_list.length; i += 2) {
+                ordering_list[i].className += " order-1";
+                console.log(ordering_list[i]);
+            }
+        }
+    </script>
+
+    <title>Contacts</title>
 </head>
 
 <body>
@@ -421,7 +433,7 @@
 
 
 
-            <div class="main-part-container col-12 col-sm-12 col-md-9" style=" z-index: 0; padding: 0px">
+            <div class="main-part-container col-12 col-sm-12 col-md-9" style=" z-index: 0; padding: 0px 20px">
 
 
                 <!--BREADCRUMB-->
@@ -432,163 +444,203 @@
                     </ol>
                 </nav>
 
-                <!--CATEGORIES LINKS-->
-                <div id="categories-links" class="categories-image-links row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-4 row-cols-xl-4 row-cols-xxl-4">
+                <!--CONTACTS PAGE CONTENT-->
+                <div class="contacts-page">
+                    <div class="contacts-page-header">
 
-                    <div class="category-thumb">
-                        <a href="https://www.google.com" class="category-link" style="padding: 0;">
-                            <img class="category__image" src="images/slide1.jpg" />
+                        <div class="heading">
+                            <p class="page-header">НАШИ ФИЛИАЛЫ</p>
+                        </div>
+                        <p class="page-text"><strong>ОсОО "Кылымбий"</strong> имеет 6 точек в городе Бишкек и 1 магазин в городе Ош.<br></p>
+                        <p class="page-text">Каждый филиал имеет <strong>особый ассортимент товаров</strong>. Также вы можете оформить доставку на адреса наших филиалов.</p>
 
-                            <p class="category__name">Унитазы</p>
-                        </a>
-                    </div>
-                    <div class="category-thumb">
-                        <a href="https://www.google.com" class="category-link" style="padding: 0">
-                            <img class="category__image" src="images/slide1.jpg" />
+                        <p class="page-text">Посетите наши магазины сантехнических товаров и познакомьтесь с широким ассортиментом хозяйственных товаров.</p>
 
-                            <p class="category__name">Унитазы</p>
-                        </a>
-                    </div>
-                    <div class="category-thumb">
-                        <a href="https://www.google.com" class="category-link" style="padding: 0">
-                            <img class="category__image" src="images/slide1.jpg" />
-
-                            <p class="category__name">Унитазы</p>
-                        </a>
-                    </div>
-                    <div class="category-thumb">
-                        <a href="https://www.google.com" class="category-link" style="padding: 0">
-                            <img class="category__image" src="images/slide1.jpg" />
-
-                            <p class="category__name">Унитазы</p>
-                        </a>
-                    </div>
-                    <div class="category-thumb">
-                        <a href="https://www.google.com" class="category-link" style="padding: 0">
-                            <img class="category__image" src="images/slide1.jpg">
-
-                            <p class="category__name">Унитазы</p>
-                        </a>
-                    </div>
-                    <div class="category-thumb">
-                        <a href="https://www.google.com" class="category-link" style="padding: 0">
-                            <img class="category__image" src="images/slide1.jpg" />
-
-                            <p class="category__name">Унитазы</p>
-                        </a>
-                    </div>
-                    <div class="category-thumb">
-                        <a href="https://www.google.com" class="category-link" style="padding: 0">
-                            <img class="category__image" src="images/slide1.jpg" />
-
-                            <p class="category__name">Унитазы</p>
-                        </a>
                     </div>
 
-                </div>
-                <!--SLIDES-->
-                <div class="slides-container">
-                    <div class="mySlides">
-                        <img src="images/slide1.jpg" style="width:100%">
-                    </div>
+                    <div class="contacts-page-content row">
 
-                    <div class="mySlides">
-                        <img src="images/slide2.jpg" style="width:100%">
-                    </div>
+                        <div class="city row" id="Bishkek">
+                            <div class="city-name col-12">
+                                <p class="page-header">Бишкек</p>
+                            </div>
+                            <div class="branch row" id="Dordoi" style="padding: 20px 12px;">
+                                <div class="info-part col-12 col-md-6">
+                                    <div class="branch-name">
+                                        <p>Рынок "Дордой"</p>
+                                    </div>
 
-                    <div class="mySlides">
-                        <img src="images/slide3.jpg" style="width:100%">
+                                    <div class="branch-address">
+                                        <div class="icon">
+                                            <i class="fa-solid fa-location-dot"></i>
+                                        </div>
+                                        <div class="address-text">
+                                            <div>
+                                                <p>"Евразия" 56-60, Рынок "Дордой", 16а Бишкек</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="branch-contacts">
+                                        <div class="icon">
+                                            <i class="fa-solid fa-phone-volume"></i>
+                                        </div>
+                                        <div class="contacts-text">
+                                            <div>
+                                                <p class="phone"><strong>0 552 45-97-95</strong></p>
+                                                <p class="phone"><strong>0 552 20-43-12</strong></p>
+                                            </div>
+                                            <div>
+                                                <p class="phone-person">Анара</p>
+                                                <p class="phone-person">Махабат</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="map-part col-12 col-md-6">
+                                    <a href="https://google.com">
+                                        <img src="images/map_Dordoi.png" class="map__image" />
+                                    </a>
+                                </div>
+                            </div>
+                            <hr>
+
+
+                            <div class="branch row" id="Dordoi" style="padding: 20px 0px;">
+                                <div class="info-part col-12 col-md-6 order-1">
+                                    <div class="branch-name">
+                                        <p>Рынок "Дордой"</p>
+                                    </div>
+
+                                    <div class="branch-address">
+                                        <div class="icon">
+                                            <i class="fa-solid fa-location-dot"></i>
+                                        </div>
+                                        <div class="address-text">
+                                            <div>
+                                                <p>"Евразия" 56-60, Рынок "Дордой", 16а Бишкек</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="branch-contacts">
+                                        <div class="icon">
+                                            <i class="fa-solid fa-phone-volume"></i>
+                                        </div>
+                                        <div class="contacts-text">
+                                            <div>
+                                                <p class="phone"><strong>0 552 45-97-95</strong></p>
+                                                <p class="phone"><strong>0 552 20-43-12</strong></p>
+                                            </div>
+                                            <div>
+                                                <p class="phone-person">Анара</p>
+                                                <p class="phone-person">Махабат</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="map-part col-12 col-md-6">
+                                    <a href="https://google.com">
+                                        <img src="images/map_Dordoi.png" class="map__image" />
+                                    </a>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="branch row" id="Dordoi" style="padding: 20px 0px;">
+                                <div class="info-part col-12 col-md-6">
+                                    <div class="branch-name">
+                                        <p>Рынок "Дордой"</p>
+                                    </div>
+
+                                    <div class="branch-address">
+                                        <div class="icon">
+                                            <i class="fa-solid fa-location-dot"></i>
+                                        </div>
+                                        <div class="address-text">
+                                            <div>
+                                                <p>"Евразия" 56-60, Рынок "Дордой", 16а Бишкек</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="branch-contacts">
+                                        <div class="icon">
+                                            <i class="fa-solid fa-phone-volume"></i>
+                                        </div>
+                                        <div class="contacts-text">
+                                            <div>
+                                                <p class="phone"><strong>0 552 45-97-95</strong></p>
+                                                <p class="phone"><strong>0 552 20-43-12</strong></p>
+                                            </div>
+                                            <div>
+                                                <p class="phone-person">Анара</p>
+                                                <p class="phone-person">Махабат</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="map-part col-12 col-md-6">
+                                    <a href="https://google.com">
+                                        <img src="images/map_Dordoi.png" class="map__image" />
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="city row" id="Osh">
+                            <div class="city-name col-12">
+                                <p class="page-header">Ош</p>
+                            </div>
+
+                            <div class="branch row" id="Dordoi" style="padding: 20px 0px;">
+                                <div class="info-part col-12 col-md-6">
+                                    <div class="branch-name">
+                                        <p>Рынок "Дордой"</p>
+                                    </div>
+
+                                    <div class="branch-address">
+                                        <div class="icon">
+                                            <i class="fa-solid fa-location-dot"></i>
+                                        </div>
+                                        <div class="address-text">
+                                            <div>
+                                                <p>"Евразия" 56-60, Рынок "Дордой", 16а Бишкек</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="branch-contacts">
+                                        <div class="icon">
+                                            <i class="fa-solid fa-phone-volume"></i>
+                                        </div>
+                                        <div class="contacts-text">
+                                            <div>
+                                                <p class="phone"><strong>0 552 45-97-95</strong></p>
+                                                <p class="phone"><strong>0 552 20-43-12</strong></p>
+                                            </div>
+                                            <div>
+                                                <p class="phone-person">Анара</p>
+                                                <p class="phone-person">Махабат</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="map-part col-12 col-md-6">
+                                    <a href="https://google.com">
+                                        <img src="images/map_Dordoi.png" class="map__image" />
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
-                    <a class="prev" onclick="previousSlide()">❮</a>
-                    <a class="next" onclick="nextSlide()">❯</a>
                 </div>
 
             </div>
-
-            <!--BRANDS LINKS-->
-            <div id="brands-links" class="categories-image-links row row-cols-2 row-cols-sm-4 row-cols-md-5 row-cols-lg-5 row-cols-xl-6 row-cols-xxl-6">
-
-                <div class="brand-thumb">
-                    <a href="https://www.google.com" class="brand__link" style="padding: 0">
-                        <img class="category__image" src="images/brand.png" />
-
-                        <p class="brand__name">Унитазы</p>
-                    </a>
-                </div>
-                <div class="brand-thumb">
-                    <a href="https://www.google.com" class="brand__link" style="padding: 0">
-                        <img class="brand__image" src="images/brand.png" />
-
-                        <p class="brand__name">Унитазы</p>
-                    </a>
-                </div>
-                <div class="brand-thumb">
-                    <a href="https://www.google.com" class="brand__link" style="padding: 0">
-                        <img class="brand__image" src="images/brand.png" />
-
-                        <p class="brand__name">Унитазы</p>
-                    </a>
-                </div>
-                <div class="brand-thumb">
-                    <a href="https://www.google.com" class="brand__link" style="padding: 0">
-                        <img class="brand__image" src="images/brand.png" />
-
-                        <p class="brand__name">Унитазы</p>
-                    </a>
-                </div>
-                <div class="brand-thumb">
-                    <a href="https://www.google.com" class="brand__link" style="padding: 0;">
-                        <img class="brand__image" src="images/brand.png" />
-
-                        <p class="brand__name">Унитазы</p>
-                    </a>
-                </div>
-                <div class="brand-thumb">
-                    <a href="https://www.google.com" class="brand__link" style="padding: 0">
-                        <img class="brand__image" src="images/brand.png" />
-
-                        <p class="brand__name">Унитазы</p>
-                    </a>
-                </div>
-
-            </div>
-
-
-            <div class="info-banners">
-
-            </div>
-
-            <!--POPULAR AND NEW ITEMS TABS-->
-            <div style="margin: 30px 0px">
-                <div class="tabset">
-                    <!-- Tab 1 -->
-                    <input type="radio" name="tabset" id="tab1" aria-controls="popular" checked>
-                    <label for="tab1">Популярное</label>
-                    <!-- Tab 2 -->
-                    <input type="radio" name="tabset" id="tab2" aria-controls="new">
-                    <label for="tab2">Новинки</label>
-
-                    <div class="tab-panels">
-                        <section id="popular" class="tab-panel">
-                            <h2>6A. Märzen</h2>
-                            <p><strong>Overall Impression:</strong> An elegant, malty German amber lager with a clean, rich, toasty and bready malt flavor, restrained bitterness, and a dry finish that encourages another drink. The overall malt impression
-                                is soft, elegant, and complex, with a rich aftertaste that is never cloying or heavy.</p>
-                            <p><strong>History:</strong> As the name suggests, brewed as a stronger “March beer” in March and lagered in cold caves over the summer. Modern versions trace back to the lager developed by Spaten in 1841, contemporaneous to the
-                                development of Vienna lager. However, the Märzen name is much older than 1841; the early ones were dark brown, and in Austria the name implied a strength band (14 °P) rather than a style. The German amber lager version
-                                (in the Viennese style of the time) was first served at Oktoberfest in 1872, a tradition that lasted until 1990 when the golden Festbier was adopted as the standard festival beer.</p>
-                        </section>
-                        <section id="new" class="tab-panel">
-                            <h2>6B. Rauchbier</h2>
-                            <p><strong>Overall Impression:</strong> An elegant, malty German amber lager with a balanced, complementary beechwood smoke character. Toasty-rich malt in aroma and flavor, restrained bitterness, low to high smoke flavor, clean
-                                fermentation profile, and an attenuated finish are characteristic.</p>
-                            <p><strong>History:</strong> A historical specialty of the city of Bamberg, in the Franconian region of Bavaria in Germany. Beechwood-smoked malt is used to make a Märzen-style amber lager. The smoke character of the malt varies
-                                by maltster; some breweries produce their own smoked malt (rauchmalz).</p>
-                        </section>
-                    </div>
-
-                </div>
-            </div>
-
         </div>
     </div>
     <!--Footer-->
