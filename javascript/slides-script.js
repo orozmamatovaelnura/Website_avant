@@ -1,6 +1,3 @@
-let slideIndex = 0;
-
-
 function nextSlide() {
     showSlides(slideIndex + 1);
 }
@@ -20,8 +17,7 @@ function showSlides(n) {
     } else {
         slideIndex = n;
     }
-    console.log(slideIndex);
-    console.log(n);
+
     for (i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
     }

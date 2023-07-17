@@ -191,13 +191,13 @@
 /* Disbale close accordion button when screen is medium*/
 
 @media only screen and (min-width: 576px) {
-    #close-accordion1 {
+    #close-accordion {
         pointer-events: none;
     }
 }
 
 @media only screen and (max-width: 576px) {
-    #close-accordion1 {
+    #close-accordion {
         pointer-events: auto;
     }
 }

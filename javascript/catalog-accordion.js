@@ -1,51 +1,47 @@
-/*
-var w = window.innerWidth;
-var acc = document.getElementsByClassName("accordion");
-
-if (w < 770 || w > 420) {
-    var panel = acc.nextElementSibling;
-    panel.style.display = "block";
-}
-
-*/
-
-
-
-
-/*
-var acc = document.getElementsByClassName("accordion");
-var i;
-
-for (i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        var panel = this.nextElementSibling;
-        if (panel.style.display === "block") {
-            panel.style.display = "none";
-        } else {
-            panel.style.display = "block";
-        }
-    });
-}
-*/
-
 function openSubcategories(evt, categoryName) {
-    var i, x;
-    x = document.getElementsByClassName("category");
-    for (i = 0; i < x.length; i++) {
-        x[i].style.display = "none";
-    }
+    if ($(window).width() >= 576) {
+        var i, x;
+        console.log("window width is " + $(window).width().toString());
+        x = document.getElementsByClassName("category");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
 
-    document.getElementById(categoryName).style.display = "block";
-    document.getElementsByClassName("subcategories-container").style.display = "block";
+        document.getElementById(categoryName).style.display = "block";
+
+        document.getElementById("subcategories-container").style.border = "solid 1px rgba(0, 0, 0, .1)";
+        document.getElementById("subcategories-container").style.borderLeft = "none";
+    }
 }
 
 function closeSubcategories(evt, categoryName) {
-    var i, x;
-    x = document.getElementsByClassName("category");
-    for (i = 0; i < x.length; i++) {
-        x[i].style.display = "none";
+    if ($(window).width() >= 576) {
+        var i, x;
+        x = document.getElementsByClassName("category");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
     }
+    document.getElementById("subcategories-container").style.border = "none";
+}
 
 
+
+function openCloseSubcategoriesDown(evt, categoryName) {
+
+    if ($(window).width() < 576) {
+        var i, x;
+        x = document.getElementsByClassName("category");
+
+
+        if (document.getElementById(categoryName).title == "closed") {
+            document.getElementById(categoryName).title = "open";
+
+            document.getElementById(categoryName).style.display = "block";
+
+        } else {
+            document.getElementById(categoryName).title = "closed";
+            document.getElementById(categoryName).style.display = "none";
+        }
+    }
 }

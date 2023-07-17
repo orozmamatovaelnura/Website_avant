@@ -10,9 +10,9 @@
     <link rel="stylesheet" href="styles/accordion-style.css" />
     <link rel="stylesheet" href="styles/image-slides.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <script rel="script" href="javascript/placeholder_animation.js"></script>
-    <script rel="script" href="javascript/slides-script.js"></script>
-    <script rel="script" href="javascript/catalog-accordion.js"></script>
+    <script rel="script" src="javascript/placeholder_animation.js"></script>
+    <script rel="script" src="javascript/slides-script.js"></script>
+    <script rel="script" src="javascript/catalog-accordion.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
@@ -45,81 +45,6 @@
                 }
             }
         };
-
-        function nextSlide() {
-            showSlides(slideIndex + 1);
-        }
-
-        function previousSlide() {
-            showSlides(slideIndex - 1);
-        }
-
-        function showSlides(n) {
-            let i;
-            let slides = document.getElementsByClassName("mySlides");
-            if (n == slides.length) {
-                n = 0;
-            }
-            if (n < 0) {
-                slideIndex = slides.length - 1;
-            } else {
-                slideIndex = n;
-            }
-
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            slides[slideIndex].style.display = "block";
-        }
-
-
-        function openSubcategories(evt, categoryName) {
-            if ($(window).width() >= 576) {
-                var i, x;
-                console.log("window width is " + $(window).width().toString());
-                x = document.getElementsByClassName("category");
-                for (i = 0; i < x.length; i++) {
-                    x[i].style.display = "none";
-                }
-
-                document.getElementById(categoryName).style.display = "block";
-
-                document.getElementById("subcategories-container").style.border = "solid 1px rgba(0, 0, 0, .1)";
-                document.getElementById("subcategories-container").style.borderLeft = "none";
-            }
-        }
-
-        function closeSubcategories(evt, categoryName) {
-            if ($(window).width() >= 576) {
-                var i, x;
-                x = document.getElementsByClassName("category");
-                for (i = 0; i < x.length; i++) {
-                    x[i].style.display = "none";
-                }
-            }
-            document.getElementById("subcategories-container").style.border = "none";
-        }
-
-
-
-        function openCloseSubcategoriesDown(evt, categoryName) {
-
-            if ($(window).width() < 576) {
-                var i, x;
-                x = document.getElementsByClassName("category");
-
-
-                if (document.getElementById(categoryName).title == "closed") {
-                    document.getElementById(categoryName).title = "open";
-
-                    document.getElementById(categoryName).style.display = "block";
-
-                } else {
-                    document.getElementById(categoryName).title = "closed";
-                    document.getElementById(categoryName).style.display = "none";
-                }
-            }
-        }
     </script>
 
     <title>Avant</title>
@@ -166,8 +91,8 @@
                         <img class="bag-icon" src="images/bag.jpg" />
                     </a>
                 </div>
-                <div class="collab-form-button col-6 col-md-12 offset-xl-1 col-xl-10 offset-xxl-1 col-xxl-10" style="margin-left: 0;">
-                    <button id="collab-button">Заявка на сотрудничество</button>
+                <div class="collab-form-button col-6 col-md-10 offset-md-1" style="margin-left: 0;">
+                    <a href="collab-page.html"><button id="collab-button">Заявка на сотрудничество</button></a>
                 </div>
             </div>
 
@@ -194,9 +119,9 @@
                         <div>
                             <span class="target-fix" id="myaccordion1"></span>
 
-                            <a href="#myaccordion1" id="open-accordion1" title="open">Open Accordion</a>
+                            <a href="#myaccordion1" id="open-accordion" title="open">Open Accordion</a>
 
-                            <a href="#myaccordion" id="close-accordion1" title="close">Close Accordion</a>
+                            <a href="#myaccordion" id="close-accordion" title="close">Close Accordion</a>
 
                             <div id="myaccordion-content">
 
@@ -220,28 +145,6 @@
                                                 </div>
                                             </div>
                                         </li>
-                                        <li class="category-tablink" onmouseover="openSubcategories(event, 'Раковины')" onmouseout="closeSubcategories(event, 'Раковины')" onclick="openCloseSubcategoriesDown(event, 'Раковины-вниз')">
-
-                                            <span class="category-icon">
-                                                    <img src="images/category-icon.png" />
-                                                </span> Раковины
-                                            <div class="subaccordion-content">
-                                                <div id="Раковины-вниз" title="closed" style="padding-left: 0%;" class="category">
-                                                    <ul class="subcategories">
-                                                        <li>
-                                                            <a class="subcategory-link" href="https://www.google.com">
-                                                                <button>Go to Google</button>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="subcategory-link" href="https://www.google.com">
-                                                                <button>Go to Google</button>
-                                                            </a>
-                                                        </li>
-
-                                                    </ul>
-                                                </div>
-                                            </div>
 
                                         </li>
                                         <li class="category-tablink" onmouseover="openSubcategories(event, 'Аксессуары')" onmouseout="closeSubcategories(event, 'Аксессуары')" onclick="openCloseSubcategoriesDown(event, 'Аксессуары-вниз')">
@@ -302,6 +205,7 @@
                                                 </div>
                                             </div>
                                         </li>
+                                    </ul>
                                 </div>
 
                                 <div id="subcategories-container" style="z-index: 1;">

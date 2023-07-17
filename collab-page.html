@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Collaboration</title>
+    <link rel="stylesheet" href="styles/collab-style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+    <script>
+        function hoverdiv(e, divid) {
+
+            var left = e.clientX + "px";
+            var top = e.clientY + "px";
+
+            var div = document.getElementById(divid);
+
+            div.style.left = left;
+            div.style.top = top;
+
+            $("#" + divid).toggle();
+            return false;
+        }
+    </script>
+</head>
+
+<body class="row" style="background-color: #a1cffdc8;">
+    <div class="container col-10 offset-1 col-md-8 offset-md-2" style="padding-left: calc(var(--bs-gutter-x) * .9); padding-right: calc(var(--bs-gutter-x) * .9);">
+        <form>
+            <div class="row">
+                <h3 style="padding: 12px;">Заявка на сотрудничество</h3>
+                <h5 style="display: inline-block;">Наименование организации/название магазина:</h5>
+                <div class="input-group input-group-icon">
+                    <input type="text" placeholder="Авант" />
+                    <div class="input-icon"><i class="fa-solid fa-building"></i></div>
+                </div>
+
+                <h5>Регион, область, край:</h5>
+                <div class="input-group input-group-icon">
+
+                    <input type="password" placeholder="Бишкек" />
+                    <div class="input-icon"><i class="fa fa-earth-americas"></i></div>
+                </div>
+                <h5>Контактное лицо:</h5>
+                <div class="input-group input-group-icon">
+
+                    <input type="password" placeholder="Ажара" />
+                    <div class="input-icon"><i class="fa-solid fa-user"></i></div>
+                </div>
+                <h5>Телефон:</h5>
+                <div class="input-group input-group-icon">
+
+                    <input type="password" placeholder="0550 775 123" />
+                    <div class="input-icon"><i class="fa fa-phone"></i></div>
+                </div>
+                <h5>Email:</h5>
+                <div class="input-group input-group-icon">
+
+                    <input type="password" placeholder="MattewJohn@gmail.com" />
+                    <div class="input-icon"><i class="fa-solid fa-envelope"></i></div>
+                </div>
+
+                <div class="col-half">
+                    <h5>Интересующий ассортимент:</h5>
+                    <div class="input-group" style="display: block; margin-bottom: 0;">
+
+                        <input id="good1" type="checkbox" name="type" />
+                        <label for="good1">Полипропиленовые трубы и фитинги</label>
+                        <input id="good2" type="checkbox" name="type" />
+                        <label for="good2">Арматура безопасности</label>
+                        <input id="good3" type="checkbox" name="type" />
+                        <label for="good3"> Гибкая подводка</label>
+                        <input id="good4" type="checkbox" name="type" />
+                        <label for="good4">Насосное оборудование</label>
+                        <input id="good5" type="checkbox" name="type" />
+                        <label for="good5">Резьбовые фитинги</label>
+                        <input id="good6" type="checkbox" name="type" />
+                        <label for="good6">Запорная арматура и комплектующие</label>
+
+                    </div>
+                </div>
+                <p class="comments">Это комментарий.</p>
+                <h5>Сообщение:</h5>
+                <div class="input-group input-group-icon" style="margin-bottom: 0;">
+                    <textarea name="Text1" cols="50" rows="4"></textarea>
+                </div>
+                <p class="comments">Это комментарий.</p>
+                <div class="input-group">
+                    <div class="input-group" style="display: block;">
+                        <h5>Сфера деятельности:</h5>
+                        <input id="specialization1" type="checkbox" name="type-of-collab" />
+                        <label for="specialization1">Розничная торговля</label>
+                        <input id="specialization2" type="checkbox" name="type-of-collab" />
+                        <label for="specialization2">Оптовая торговля</label>
+
+                    </div>
+                </div>
+                <p>Ваша заявка будет обработана. Мы напишем или позвоним вам в скорейшем времени.</p>
+                <div style="padding-right: 0; padding-left: auto;">
+                    <button type="button" class="btn btn-primary">Отправить заявку</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>

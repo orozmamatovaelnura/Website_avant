@@ -125,11 +125,12 @@
 
     <script>
         window.onload = function() {
-            var i;
-            ordering_list = document.getElementsByClassName("info-part");
-            for (i = 1; i < ordering_list.length; i += 2) {
-                ordering_list[i].className += " order-1";
-                console.log(ordering_list[i]);
+            if ($(window).width() >= 576) {
+                var i;
+                ordering_list = document.getElementsByClassName("info-part");
+                for (i = 1; i < ordering_list.length; i += 2) {
+                    ordering_list[i].className += " order-1";
+                }
             }
         }
     </script>
@@ -465,7 +466,7 @@
                                 <p class="page-header">Бишкек</p>
                             </div>
                             <div class="branch row" id="Dordoi" style="padding: 20px 12px;">
-                                <div class="info-part col-12 col-md-6">
+                                <div class="info-part col-12 col-md-6" style="padding: 10px 12px">
                                     <div class="branch-name">
                                         <p>Рынок "Дордой"</p>
                                     </div>
@@ -507,7 +508,7 @@
                             <hr>
 
 
-                            <div class="branch row" id="Dordoi" style="padding: 20px 0px;">
+                            <div class="branch row" id="Dordoi" style="padding: 20px 12px;">
                                 <div class="info-part col-12 col-md-6 order-1">
                                     <div class="branch-name">
                                         <p>Рынок "Дордой"</p>
@@ -548,8 +549,8 @@
                                 </div>
                             </div>
                             <hr>
-                            <div class="branch row" id="Dordoi" style="padding: 20px 0px;">
-                                <div class="info-part col-12 col-md-6">
+                            <div class="branch row" id="Dordoi" style="padding: 20px 12px;">
+                                <div class="info-part col-12 col-md-6" style="padding: 10px 12x">
                                     <div class="branch-name">
                                         <p>Рынок "Дордой"</p>
                                     </div>
@@ -595,8 +596,8 @@
                                 <p class="page-header">Ош</p>
                             </div>
 
-                            <div class="branch row" id="Dordoi" style="padding: 20px 0px;">
-                                <div class="info-part col-12 col-md-6">
+                            <div class="branch row" id="Dordoi" style="padding: 20px 12px;">
+                                <div class="info-part col-12 col-md-6" style="padding: 10px 12x">
                                     <div class="branch-name">
                                         <p>Рынок "Дордой"</p>
                                     </div>
